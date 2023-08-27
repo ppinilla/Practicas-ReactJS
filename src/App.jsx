@@ -1,22 +1,31 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 /* import React, { useState } from 'react' */
 import ComponenteA from './components/ComponenteA'
+import ItemListContainer from "./components/ItemListContainer"
 
 //App.jsx es el componente padre
 //ComponenteA.jsx es el componente hijo
 
 const App = () => {
 
-  //HOOK
+  //<HOOK
 
-  const [nombre, setNombre] = useState("Coder")
+  /* const [nombre, setNombre] = useState("Coder")
   const [carrito, setCarrito] = useState([])
   const [usuario, setUsuario] = useState(null)
+  const [contador, setContador] = useState(0) */
+  const [mensaje, setMensaje] = useState("Mensaje inicial")
   const [contador, setContador] = useState(0)
-  console.log(nombre);
+
+  //HOOK>
+  /* console.log(nombre);
   console.log(carrito);
   console.log(usuario);
   console.log(contador);
+
+  const restar = () => {
+    setContador(contador - 1)
+  } */
 
   /* const curso = "React"
   const comision = 55750
@@ -28,6 +37,10 @@ const App = () => {
     console.log(valor);
   }
  */
+
+  useEffect(() => {
+    console.log("UseEffect...");
+  },[mensaje, contador])
   return (
     <>
       {/* <div>App</div> */}
@@ -37,10 +50,18 @@ const App = () => {
       coder={coder}
       tomarValor={tomarValor}
       /> */}
-      <h1>{nombre}</h1>
+      {/* <h1>{nombre}</h1>
       <button onClick={() => setNombre ("House")}>Cambiar estado</button>
       <h2>{contador}</h2>
       <button onClick={() => setContador (contador + 1)}>Sumar</button>
+      <button onClick={(restar)}>Restar</button>
+      <button onClick={() => setContador(0)}>Reiniciar</button> */}
+
+      <h2>{mensaje}</h2>
+      <button onClick={() => setMensaje("Mensaje Modificado")}>Cambiar Mensaje</button>
+      <p>{contador}</p>
+      <button onClick={() => setContador (contador + 1)}>Sumar</button>
+      <ItemListContainer/>
     </>
   )
 }
