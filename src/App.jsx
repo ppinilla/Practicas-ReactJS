@@ -1,7 +1,7 @@
-import {useState, useEffect} from "react"
-/* import React, { useState } from 'react' */
+import { useState, useEffect } from "react"
 import ComponenteA from './components/ComponenteA'
-import ItemListContainer from "./components/ItemListContainer"
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+
 
 //App.jsx es el componente padre
 //ComponenteA.jsx es el componente hijo
@@ -40,7 +40,8 @@ const App = () => {
 
   useEffect(() => {
     console.log("UseEffect...");
-  },[mensaje, contador])
+  }, [mensaje, contador])
+
   return (
     <>
       {/* <div>App</div> */}
@@ -59,9 +60,13 @@ const App = () => {
 
       <h2>{mensaje}</h2>
       <button onClick={() => setMensaje("Mensaje Modificado")}>Cambiar Mensaje</button>
-      <p>{contador}</p>
-      <button onClick={() => setContador (contador + 1)}>Sumar</button>
-      <ItemListContainer/>
+
+      <div className="contador">
+        <p>{contador}</p>
+        <button onClick={() => setContador(contador + 1)}>Sumar</button>
+        <ItemListContainer />
+      </div>
+
     </>
   )
 }
