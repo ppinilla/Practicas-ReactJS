@@ -13,9 +13,9 @@ const App = () => {
   /* const [nombre, setNombre] = useState("Coder")
   const [carrito, setCarrito] = useState([])
   const [usuario, setUsuario] = useState(null)
-  const [contador, setContador] = useState(0) */
-  const [mensaje, setMensaje] = useState("Mensaje inicial")
   const [contador, setContador] = useState(0)
+  const [mensaje, setMensaje] = useState("Mensaje inicial")
+  const [contador, setContador] = useState(0) */
 
   //HOOK>
   /* console.log(nombre);
@@ -25,9 +25,8 @@ const App = () => {
 
   const restar = () => {
     setContador(contador - 1)
-  } */
-
-  /* const curso = "React"
+  } 
+  const curso = "React"
   const comision = 55750
 
   const coder = () => {
@@ -36,11 +35,11 @@ const App = () => {
   const tomarValor = (valor) => {
     console.log(valor);
   }
- */
+
 
   useEffect(() => {
     console.log("UseEffect...");
-  }, [mensaje, contador])
+  }, [mensaje, contador]) */
 
   return (
     <>
@@ -58,14 +57,16 @@ const App = () => {
       <button onClick={(restar)}>Restar</button>
       <button onClick={() => setContador(0)}>Reiniciar</button> */}
 
-      <h2>{mensaje}</h2>
+      {/* <h2>{mensaje}</h2>
       <button onClick={() => setMensaje("Mensaje Modificado")}>Cambiar Mensaje</button>
 
       <div className="contador">
         <p>{contador}</p>
         <button onClick={() => setContador(contador + 1)}>Sumar</button>
         <ItemListContainer />
-      </div>
+      </div> */}
+
+      <ItemListContainer/>
 
     </>
   )
