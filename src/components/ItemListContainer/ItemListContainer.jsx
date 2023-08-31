@@ -1,9 +1,28 @@
+import { useEffect, useState } from 'react'
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
 
-    let productos = [
+    const getProducts = async () => {
+        const response = await fetch("https://fakestoreapi.com/products")
+        const data = await response.json()
+        console.log(data);
+
+        return data
+    }
+
+    const [product, setProduct] = useState([])
+    console.log(product);
+
+    useEffect(() => {
+        getProducts().then((product) => setProduct((product)))
+    }, [])
+
+    getProducts()
+
+    /* let productos = [
         { id: '1', name: 'Producto A', description: 'descripcion producto 1', price: 1000, stock: 10 },
         { id: '2', name: 'Producto B', description: 'descripcion producto 2', price: 1500, stock: 5 },
         { id: '3', name: 'Producto C', description: 'descripcion producto 3', price:2000, stock: 15 }
@@ -25,7 +44,7 @@ const ItemListContainer = () => {
     })
     .catch((error) => {
         console.log(error);
-    })
+    }) */
 
     /* const products = [
         { id: '1', name: 'Producto A', description: 'descripcion producto 1', stock: 10 },
@@ -83,7 +102,7 @@ return (
         {/* <div>ItemListContainer</div>
             <ItemCount /> */}
 
-        {
+        {/* {
             productos.map((p) => {
                 return(
                     <div key={p.id}>
@@ -93,7 +112,9 @@ return (
                     </div>
                 )
             })
-        }
+        } */}
+
+        <ItemList product={product}/>
     </>
 )
 
