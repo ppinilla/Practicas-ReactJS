@@ -2,7 +2,7 @@ import React from 'react'
 import {Card, CardBody, Image, Stack, Heading, Text, Divider, Button, ButtonGroup, CardFooter} from "@chakra-ui/react"
 
 const Item = ({ producto }) => {
-    console.log(producto);
+    //console.log(producto);
     return (
         <>
             < Card maxW='sm' >
@@ -13,12 +13,6 @@ const Item = ({ producto }) => {
                     />
                     <Stack mt='6' spacing='3'>
                         <Heading size='md'>{producto.title}</Heading>
-                        <Text>
-                            {producto.description}
-                        </Text>
-                        <Text color='blue.600' fontSize='2xl'>
-                            {producto.price}
-                        </Text>
                     </Stack>
                 </CardBody>
                 <Divider />
@@ -26,9 +20,6 @@ const Item = ({ producto }) => {
                     <ButtonGroup spacing='2'>
                         <Button variant='solid' colorScheme='blue'>
                             Detalle
-                        </Button>
-                        <Button variant='ghost' colorScheme='blue'>
-                            Add to cart
                         </Button>
                     </ButtonGroup>
                 </CardFooter>

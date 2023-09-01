@@ -30,7 +30,6 @@ const ItemCount = () => {
                 <button onClick={Sumar} /* disabled={contador >= 10} */>+</button>
                 <button onClick={onAdd}>Agregar al Carrito</button>
             </div>
-
         </>
 
     )

@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react'
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import ItemList from '../ItemList/ItemList'
+import ItemList from './ItemList'
 
 const ItemListContainer = () => {
 
     const getProducts = async () => {
         const response = await fetch("https://fakestoreapi.com/products")
         const data = await response.json()
-        console.log(data);
+        //console.log(data);
 
         return data
     }
 
     const [product, setProduct] = useState([])
-    console.log(product);
+    //console.log(product);
 
     useEffect(() => {
         getProducts().then((product) => setProduct((product)))

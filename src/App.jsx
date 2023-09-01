@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import ComponenteA from './components/ComponenteA'
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
 
 
 //App.jsx es el componente padre
@@ -67,6 +68,7 @@ const App = () => {
       </div> */}
 
       <ItemListContainer/>
+      {/* <ItemDetailContainer/> */}
 
     </>
   )
