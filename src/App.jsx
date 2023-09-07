@@ -2,6 +2,9 @@ import { useState, useEffect } from "react"
 import ComponenteA from './components/ComponenteA'
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import CounterComponent from "./CounterComponent"
+import ChildrenComponent from "./components/ChildrenComponent"
+import TaskFilter from "./components/TaskFilter"
 
 
 //App.jsx es el componente padre
@@ -67,7 +70,13 @@ const App = () => {
         <ItemListContainer />
       </div> */}
 
-      <ItemListContainer/>
+      {/* <ItemListContainer/>
+      <CounterComponent/> */}
+      {/* <ChildrenComponent title='Titulo del componente'>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, corrupti?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, repellendus saepe aliquam sapiente amet maxime consectetur obcaecati suscipit iusto mollitia.</p>
+      </ChildrenComponent> */}
+      <TaskFilter/>
       {/* <ItemDetailContainer/> */}
 
     </>
