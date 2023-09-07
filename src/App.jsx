@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import ComponenteA from './components/ComponenteA'
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import ItemListContainer from "./components/ItemListContainer"
+import ItemDetailContainer from "./components/ItemDetailContainer"
 import CounterComponent from "./CounterComponent"
 import ChildrenComponent from "./components/ChildrenComponent"
 import TaskFilter from "./components/TaskFilter"

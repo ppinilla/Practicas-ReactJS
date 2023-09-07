@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import ItemDetail from './ItemDetail';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemCount from './ItemCount';
 
 const ItemDetailContainer = () => {
 
