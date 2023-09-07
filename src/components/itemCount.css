@@ -1,3 +1,6 @@
+.card{
+    margin: 20px;
+}
 .counter{
     width: fit-content;
     background-color: gold;
