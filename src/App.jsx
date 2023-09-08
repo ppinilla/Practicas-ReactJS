@@ -92,14 +92,16 @@ const App = () => {
 
 
         <Routes>
-          {/* <ItemListContainer />
-          <ItemDetailContainer /> */}
+          <Route exact path='/' element={<ItemListContainer/>}/>
+          {/* <ItemDetailContainer /> */}
 
           {/* <Route exact path='/' element={<Home/>}/>
           <Route exact path='/about' element={<About/>}/> 
           <Route exact path='/cart' element={<Cart/>}/>  */}
           {/* <Route path='/product/:id' element={<ProductDetail/>}/> */}
           <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
+          <Route exact path='/category/:id' element={<ItemListContainer/>}/>
+
         </Routes>
 
 

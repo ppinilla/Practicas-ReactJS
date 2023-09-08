@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import React from 'react'
 import ItemCount from './ItemCount'
 import ItemList from './ItemList'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
 
@@ -97,6 +98,10 @@ aplicarDescuento
 
 console.log(aplicarDescuento); */
 
+const {id} = useParams()
+
+const filteredProducts = product.filter((product) => product.category === id)
+
 return (
     <>
         {/* <div>ItemListContainer</div>
@@ -114,7 +119,7 @@ return (
             })
         } */}
 
-        <ItemList product={product}/>
+        {id ? <ItemList product={filteredProducts} /> : <ItemList product={product}/>}
     </>
 )
 

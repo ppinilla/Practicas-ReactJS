@@ -17,7 +17,7 @@ const TaskFilter = () => {
     const handleTaskChange = (taskId) => {
         setTasks((prevTask) => {
             prevTask.map((task) => {
-                task.id === taskId ? { ...task, completed: !task.completed } : task
+                task.id === taskId ? { ...task, completed: !task.completed } : task //condition ? value1 : value2;
             })
         })
     } //Funcion que verifica el valor de filtrado

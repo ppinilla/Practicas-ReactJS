@@ -1,5 +1,5 @@
 import React from 'react'
-import {Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Divider} from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Divider } from '@chakra-ui/react'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
 
@@ -9,8 +9,8 @@ const NavBar = () => {
             <Flex>
                 <Box p='4'>
                     <Link to={'/'}>
-                       <h3>NombreProyecto</h3> 
-                    </Link>                   
+                        <h3>NombreProyecto</h3>
+                    </Link>
                 </Box>
                 <Spacer />
                 <Box p='4'>
@@ -19,9 +19,19 @@ const NavBar = () => {
                             Categorias
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>Categoria A</MenuItem>
-                            <MenuItem>Categoria B</MenuItem>
-                            <MenuItem>Categoria C</MenuItem>
+                            <Link to={'/category/jewelery'}>
+                                <MenuItem>Jewelery</MenuItem>
+                            </Link>
+                            <Link to={`/category/men's clothing`}>
+                                <MenuItem>Men's Clothing</MenuItem>
+                            </Link>
+                            <Link to={'/category/electronics'}>
+                                <MenuItem>Electronics</MenuItem>
+                            </Link>
+                            <Link to={`category/women's clothing`}>
+                                <MenuItem>Women's Clothing</MenuItem>
+                            </Link>
+
                         </MenuList>
                     </Menu>
                 </Box>
@@ -33,7 +43,7 @@ const NavBar = () => {
                 </Box>
 
             </Flex>
-            <Divider/>
+            <Divider />
         </div>
     )
 }
