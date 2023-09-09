@@ -11,13 +11,47 @@ import Home from "./components/Home"
 import About from "./components/About"
 import Cart from "./components/Cart"
 import ProductDetail from "./components/ProductDetail"
-
+import Form from "./components/Form"
 
 //App.jsx es el componente padre
 //ComponenteA.jsx es el componente hijo
 
 const App = () => {
 
+  /* const handleClick = (e) => {
+    console.log(e.target.innerWidth);
+  }
+  window.addEventListener("resize", handleClick) */
+
+  //En HTML
+  /* 
+  <button onClick="descargarInfo()">Descargar</button>
+
+  <form onsubmit="agregarInfo()" method="post">
+  <button type:"submit">Enviar</button>
+  </form>
+
+  //En JSX
+ <button onClick={descargarInfo}>Descargar</button>
+
+ <form onsubmit= {agregarInfo}>
+  <button type:"submit">Enviar</button>
+  </form>
+
+  */
+
+  /* const sinVocales = (e) => {
+    if (
+      e.key === 'a' ||
+      e.key === 'e' ||
+      e.key === 'i' ||
+      e.key === 'o' ||
+      e.key === 'u') {
+      e.preventDefault()
+    } else {
+      console.log(e.key);
+    }
+  } */
 
 
   //<HOOK
@@ -92,23 +126,25 @@ const App = () => {
 
 
         <Routes>
-          <Route exact path='/' element={<ItemListContainer/>}/>
-          {/* <ItemDetailContainer /> */}
 
-          {/* <Route exact path='/' element={<Home/>}/>
-          <Route exact path='/about' element={<About/>}/> 
-          <Route exact path='/cart' element={<Cart/>}/>  */}
-          {/* <Route path='/product/:id' element={<ProductDetail/>}/> */}
-          <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
-          <Route exact path='/category/:id' element={<ItemListContainer/>}/>
+          {/* <ItemDetailContainer />
+          <Route path='/product/:id' element={<ProductDetail />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/' element={<Home />} /> */}
+
+          <Route exact path='/cart' element={<Cart />} />
+          <Route exact path='/' element={<ItemListContainer />} />
+          <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/category/:id' element={<ItemListContainer />} />
 
         </Routes>
 
 
       </BrowserRouter>
 
+      {/* <input type="text" onKeyDown={sinVocales} placeholder="Sin vocales"/> */}
 
-
+      {/* <Form /> */}
     </>
   )
 }
