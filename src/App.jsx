@@ -12,6 +12,7 @@ import About from "./components/About"
 import Cart from "./components/Cart"
 import ProductDetail from "./components/ProductDetail"
 import Form from "./components/Form"
+import ShoppingCartContext from "./context/ShoppingCartContext"
 
 //App.jsx es el componente padre
 //ComponenteA.jsx es el componente hijo
@@ -89,6 +90,10 @@ const App = () => {
 
   return (
     <>
+
+      <ShoppingCartContext>
+        <ComponenteA />
+      </ShoppingCartContext>
       {/* <div>App</div> */}
       {/* <ComponenteA 
       curso={curso} //nombreProps=valorProps
@@ -119,20 +124,20 @@ const App = () => {
       </ChildrenComponent> */}
       {/* <TaskFilter/> */}
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
 
         <NavBar />
 
 
 
-        <Routes>
+        <Routes> */}
 
-          {/* <ItemDetailContainer />
+      {/* <ItemDetailContainer />
           <Route path='/product/:id' element={<ProductDetail />} />
           <Route exact path='/about' element={<About />} />
           <Route exact path='/' element={<Home />} /> */}
 
-          <Route exact path='/cart' element={<Cart />} />
+      {/* <Route exact path='/cart' element={<Cart />} />
           <Route exact path='/' element={<ItemListContainer />} />
           <Route exact path='/item/:id' element={<ItemDetailContainer />} />
           <Route path='/category/:id' element={<ItemListContainer />} />
@@ -140,7 +145,7 @@ const App = () => {
         </Routes>
 
 
-      </BrowserRouter>
+      </BrowserRouter> */}
 
       {/* <input type="text" onKeyDown={sinVocales} placeholder="Sin vocales"/> */}
 

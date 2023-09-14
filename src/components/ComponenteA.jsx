@@ -1,6 +1,19 @@
 import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
 
-const ComponenteA = ({curso, comision, coder, tomarValor}) => {
+const ComponenteA = () => {
+  const { cart, setCart, comision } = useContext(CartContext)
+  console.log(cart);
+  return (
+    <>
+      <h1>{comision}</h1>
+    </>
+  )
+}
+
+
+/* const ComponenteA = ({curso, comision, coder, tomarValor}) => {
   coder()
 
   const ValorRandom = Math.random() * 10
@@ -10,10 +23,12 @@ const ComponenteA = ({curso, comision, coder, tomarValor}) => {
 
   return (
     <>
-    {/* <div>ComponenteA</div> */}
+     <div>ComponenteA</div> 
     <h1>{curso}</h1>
-    <h2>{comision}</h2></>
+    <h2>{comision}</h2>
+    </>
   )
-}
+
+} */
 
 export default ComponenteA
