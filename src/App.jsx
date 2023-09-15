@@ -91,9 +91,9 @@ const App = () => {
   return (
     <>
 
-      <ShoppingCartContext>
+      {/* <ShoppingCartContext>
         <ComponenteA />
-      </ShoppingCartContext>
+      </ShoppingCartContext> */}
       {/* <div>App</div> */}
       {/* <ComponenteA 
       curso={curso} //nombreProps=valorProps
@@ -124,28 +124,30 @@ const App = () => {
       </ChildrenComponent> */}
       {/* <TaskFilter/> */}
 
-      {/* <BrowserRouter>
+      <BrowserRouter>
 
-        <NavBar />
+        <ShoppingCartContext>
+          <NavBar />
+          <Routes>
+            <Route exact path='/cart' element={<Cart />} />
+            <Route exact path='/' element={<ItemListContainer />} />
+            <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+            <Route path='/category/:id' element={<ItemListContainer />} />
+
+          </Routes>
+        </ShoppingCartContext>
 
 
 
-        <Routes> */}
-
-      {/* <ItemDetailContainer />
+        {/* <ItemDetailContainer />
           <Route path='/product/:id' element={<ProductDetail />} />
           <Route exact path='/about' element={<About />} />
           <Route exact path='/' element={<Home />} /> */}
 
-      {/* <Route exact path='/cart' element={<Cart />} />
-          <Route exact path='/' element={<ItemListContainer />} />
-          <Route exact path='/item/:id' element={<ItemDetailContainer />} />
-          <Route path='/category/:id' element={<ItemListContainer />} />
-
-        </Routes>
+        {/*  */}
 
 
-      </BrowserRouter> */}
+      </BrowserRouter>
 
       {/* <input type="text" onKeyDown={sinVocales} placeholder="Sin vocales"/> */}
 

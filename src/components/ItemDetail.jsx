@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, Button, ButtonGroup, CardFooter, Flex, Spacer, Center } from "@chakra-ui/react"
 import { Link, useParams } from 'react-router-dom';
 import './itemCount.css'
+import { CartContext } from '../context/ShoppingCartContext';
+import ItemCount from './ItemCount';
 
 const ItemDetail = ({ items }) => {
     const { id } = useParams()
 
     const filteredItems = items.filter((items) => items.id == id)
 
-    const [cont, setCont] = useState(0)
+    /* const [cont, setCont] = useState(0)
 
     const sumar = () => {
         if (cont < 10) {
@@ -19,8 +21,16 @@ const ItemDetail = ({ items }) => {
         if (cont > 0) {
             setCont(cont - 1)
         }
-    }
+    } */
 
+
+    const [goToCart, setGoToCart] = useState(false)
+    const {addItem} = useContext(CartContext)
+
+    const onAdd = (quant) => {
+        setGoToCart(true)
+        addItem(items, quant)
+    }
 
 
     return (
@@ -55,12 +65,12 @@ const ItemDetail = ({ items }) => {
                                             </Button>
                                         </Link>
 
-                                        <Button onClick={restar}>-</Button>
+                                        {/* <Button onClick={restar}>-</Button>
                                         <Button>{cont}</Button>
-                                        <Button onClick={sumar}>+</Button>
-                                        <Button variant='ghost' colorScheme='blue'>
-                                            Add to cart
-                                        </Button>
+                                        <Button onClick={sumar}>+</Button> */}
+                                        {goToCart ? <Button variant='ghost' colorScheme='blue'>
+                                            Go to Cart
+                                        </Button> : <ItemCount initial={1} stock={10} onAdd={onAdd} /> }
                                     </ButtonGroup>
                                 </CardFooter>
                             </Card >

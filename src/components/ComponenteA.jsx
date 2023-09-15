@@ -4,7 +4,6 @@ import { CartContext } from '../context/ShoppingCartContext'
 
 const ComponenteA = () => {
   const { cart, setCart, comision } = useContext(CartContext)
-  console.log(cart);
   return (
     <>
       <h1>{comision}</h1>
