@@ -13,11 +13,21 @@ import Cart from "./components/Cart"
 import ProductDetail from "./components/ProductDetail"
 import Form from "./components/Form"
 import ShoppingCartContext from "./context/ShoppingCartContext"
+import ComponenteVisible from "./components/ComponenteVisible"
+import ComponenteNoVisible from "./components/ComponenteNoVisible"
+import Loading from "./components/Loading"
+import Loader from "./components/Loader"
 
 //App.jsx es el componente padre
 //ComponenteA.jsx es el componente hijo
 
 const App = () => {
+
+  const isVisible = true
+  const logueado = false
+  const admin = true
+  const [mensaje, setMensaje] = useState("")
+  const usuario = 'Es usuario' 
 
   /* const handleClick = (e) => {
     console.log(e.target.innerWidth);
@@ -90,6 +100,29 @@ const App = () => {
 
   return (
     <>
+      {/* 
+    cart.length >= 1 ? <Componente/> : <OtroComponente/>
+    cart.length >= 1 ? <Cart/> : <BackButtonCatalogue/>
+    cart.length >= 1 ? <Form/> : <BackButtonCatalogue/>
+
+    */}
+      {
+        //Renderizado condicional basado en una expresion
+        //isVisible && <ComponenteVisible/>
+        //&&: AND
+        //Rendericado condicional basado en un operador ternario
+        //isVisible ? <ComponenteVisible/> : <ComponenteNoVisible/>
+        //logueado ? <ComponenteVisible/> : <ComponenteNoVisible/>
+        //admin ? <ComponenteVisible/> : <ComponenteNoVisible/>
+
+        //mensaje ? <h1>{mensaje}</h1> : <Loading/>
+        //usuario || <ComponenteVisible/> 
+        // si usuario tiene como  valor: "",null, 0, false, con or (||) me muestra el <ComponenteVisible/> 
+      }
+
+      {/* <Loader/> */}
+
+      {/* <button onClick={() => setMensaje("Mensaje modificado")}>Cambiar mensaje</button> */}
 
       {/* <ShoppingCartContext>
         <ComponenteA />
@@ -139,12 +172,12 @@ const App = () => {
 
 
 
-        {/* <ItemDetailContainer />
+      {/* <ItemDetailContainer />
           <Route path='/product/:id' element={<ProductDetail />} />
           <Route exact path='/about' element={<About />} />
           <Route exact path='/' element={<Home />} /> */}
 
-        {/*  */}
+      
 
 
       </BrowserRouter>

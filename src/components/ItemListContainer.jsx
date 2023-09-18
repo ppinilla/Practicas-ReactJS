@@ -3,8 +3,13 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
+import Loader from './Loader'
 
 const ItemListContainer = () => {
+
+    
+    
+   
 
     const getProducts = async () => {
         const response = await fetch("https://fakestoreapi.com/products")
@@ -22,6 +27,12 @@ const ItemListContainer = () => {
     }, [])
 
     getProducts()
+    
+    /* const [productos, setProductos] = useState([])
+
+    productos == []
+    
+    productos.length === 0 ? <Loader/> : <ItemList/> */
 
     /* let productos = [
         { id: '1', name: 'Producto A', description: 'descripcion producto 1', price: 1000, stock: 10 },
@@ -78,36 +89,36 @@ const ItemListContainer = () => {
 
     fetchingData(); */
 
-/* const aplicarDescuento = new Promise((resolve, reject) => {
-    const descuento = true
+    /* const aplicarDescuento = new Promise((resolve, reject) => {
+        const descuento = true
+    
+        if(descuento) {
+            resolve('Descuento aplicado')
+        }else {
+            reject('No se pudo aplicar el descuento')
+        }
+    })
+    
+    aplicarDescuento
+    .then((resultado) => {
+        console.log(resultado) // resolve
+    })
+    .catch((error) => {
+        console.log(error) //reject
+    })
+    
+    console.log(aplicarDescuento); */
 
-    if(descuento) {
-        resolve('Descuento aplicado')
-    }else {
-        reject('No se pudo aplicar el descuento')
-    }
-})
+    const { id } = useParams()
 
-aplicarDescuento
-.then((resultado) => {
-    console.log(resultado) // resolve
-})
-.catch((error) => {
-    console.log(error) //reject
-})
+    const filteredProducts = product.filter((product) => product.category === id)
 
-console.log(aplicarDescuento); */
-
-const {id} = useParams()
-
-const filteredProducts = product.filter((product) => product.category === id)
-
-return (
-    <>
-        {/* <div>ItemListContainer</div>
+    return (
+        <>
+            {/* <div>ItemListContainer</div>
             <ItemCount /> */}
 
-        {/* {
+            {/* {
             productos.map((p) => {
                 return(
                     <div key={p.id}>
@@ -119,9 +130,9 @@ return (
             })
         } */}
 
-        {id ? <ItemList product={filteredProducts} /> : <ItemList product={product}/>}
-    </>
-)
+            {id ? <ItemList product={filteredProducts} /> : <ItemList product={product} />}
+        </>
+    )
 
 }
 

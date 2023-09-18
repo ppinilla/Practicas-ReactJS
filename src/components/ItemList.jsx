@@ -2,9 +2,17 @@ import React from 'react'
 import Item from './Item';
 import {Flex} from '@chakra-ui/react';
 
+//React.memo
+  /* 
+
+  Almacena informacion de props que ya ha sido mostrada en otra oportunidad
+  
+  */
+
 const ItemList = ({product}) => {
 
     //console.log(product);
+
 
   return (
 
@@ -19,4 +27,4 @@ const ItemList = ({product}) => {
   )
 }
 
-export default ItemList
+export default React.memo(ItemList)
