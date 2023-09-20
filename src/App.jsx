@@ -17,17 +17,19 @@ import ComponenteVisible from "./components/ComponenteVisible"
 import ComponenteNoVisible from "./components/ComponenteNoVisible"
 import Loading from "./components/Loading"
 import Loader from "./components/Loader"
+import Document from "./components/Document"
+import Collection from "./components/Collection"
 
 //App.jsx es el componente padre
 //ComponenteA.jsx es el componente hijo
 
 const App = () => {
 
-  const isVisible = true
+  /* const isVisible = true
   const logueado = false
   const admin = true
   const [mensaje, setMensaje] = useState("")
-  const usuario = 'Es usuario' 
+  const usuario = 'Es usuario'  */
 
   /* const handleClick = (e) => {
     console.log(e.target.innerWidth);
@@ -157,7 +159,7 @@ const App = () => {
       </ChildrenComponent> */}
       {/* <TaskFilter/> */}
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
 
         <ShoppingCartContext>
           <NavBar />
@@ -168,7 +170,7 @@ const App = () => {
             <Route path='/category/:id' element={<ItemListContainer />} />
 
           </Routes>
-        </ShoppingCartContext>
+        </ShoppingCartContext> */}
 
 
 
@@ -180,7 +182,10 @@ const App = () => {
       
 
 
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
+
+      <Document/>
+      {/* <Collection/> */}
 
       {/* <input type="text" onKeyDown={sinVocales} placeholder="Sin vocales"/> */}
 
