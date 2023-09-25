@@ -4,14 +4,28 @@ import ItemCount from './ItemCount'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import Loader from './Loader'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
 const ItemListContainer = () => {
 
-    
+    const {category} = useParams()
+    const [products, setProducts] = useState([])
+    console.log(products);
+
+    useEffect(() => {
+        const db = getFirestore()
+        const itemsCollection = /* query( */collection(db, "tratamientos")/* , where("category", "==", "facial")) */ ;
+        getDocs(itemsCollection).then((snapshot) => {
+            if(snapshot.size === 0) {
+                console.log("No results");
+            }
+            setProducts (snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+        })
+    }, [])
     
    
 
-    const getProducts = async () => {
+    /* const getProducts = async () => {
         const response = await fetch("https://fakestoreapi.com/products")
         const data = await response.json()
         //console.log(data);
@@ -26,7 +40,7 @@ const ItemListContainer = () => {
         getProducts().then((product) => setProduct((product)))
     }, [])
 
-    getProducts()
+    getProducts() */
     
     /* const [productos, setProductos] = useState([])
 
@@ -109,9 +123,9 @@ const ItemListContainer = () => {
     
     console.log(aplicarDescuento); */
 
-    const { id } = useParams()
+    /* const { id } = useParams()
 
-    const filteredProducts = product.filter((product) => product.category === id)
+    const filteredProducts = product.filter((product) => product.category === id) */
 
     return (
         <>
@@ -130,7 +144,8 @@ const ItemListContainer = () => {
             })
         } */}
 
-            {id ? <ItemList product={filteredProducts} /> : <ItemList product={product} />}
+            {/* {id ? <ItemList product={filteredProducts} /> : <ItemList product={product} />} */}
+            <ItemList product = {products}/>
         </>
     )
 

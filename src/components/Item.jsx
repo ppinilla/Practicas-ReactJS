@@ -9,7 +9,7 @@ const Item = ({ producto }) => {
             < Card maxW='sm' >
                 <CardBody>
                     <Image
-                        src={producto.image}
+                        src={producto.pictureUrl}
                         borderRadius='lg'
                     />
                     <Stack mt='6' spacing='3'>

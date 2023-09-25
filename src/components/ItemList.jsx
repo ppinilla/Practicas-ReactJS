@@ -20,7 +20,7 @@ const ItemList = ({product}) => {
     {product.map((p) => {
 
         return (
-            <Item producto={p} key={p.id}/>
+            <Item producto={p} key={p.title}/>
         )
     })}
     </Flex>

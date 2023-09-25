@@ -1,24 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { useState, useEffect } from "react"
-import ComponenteA from './components/ComponenteA'
+/* import { useState, useEffect } from "react"
+import ComponenteA from './components/ComponenteA' */
 import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
-import CounterComponent from "./CounterComponent"
+/* import CounterComponent from "./CounterComponent"
 import ChildrenComponent from "./components/ChildrenComponent"
-import TaskFilter from "./components/TaskFilter"
+import TaskFilter from "./components/TaskFilter" */
 import NavBar from "./components/NavBar"
-import Home from "./components/Home"
-import About from "./components/About"
+/* import Home from "./components/Home"
+import About from "./components/About" */
 import Cart from "./components/Cart"
-import ProductDetail from "./components/ProductDetail"
-import Form from "./components/Form"
+/* import ProductDetail from "./components/ProductDetail"
+import Form from "./components/Form" */
 import ShoppingCartContext from "./context/ShoppingCartContext"
-import ComponenteVisible from "./components/ComponenteVisible"
+/* import ComponenteVisible from "./components/ComponenteVisible"
 import ComponenteNoVisible from "./components/ComponenteNoVisible"
 import Loading from "./components/Loading"
 import Loader from "./components/Loader"
 import Document from "./components/Document"
-import Collection from "./components/Collection"
+import Collection from "./components/Collection" */
 
 //App.jsx es el componente padre
 //ComponenteA.jsx es el componente hijo
@@ -159,7 +159,7 @@ const App = () => {
       </ChildrenComponent> */}
       {/* <TaskFilter/> */}
 
-      {/* <BrowserRouter>
+      <BrowserRouter>
 
         <ShoppingCartContext>
           <NavBar />
@@ -170,7 +170,7 @@ const App = () => {
             <Route path='/category/:id' element={<ItemListContainer />} />
 
           </Routes>
-        </ShoppingCartContext> */}
+        </ShoppingCartContext>
 
 
 
@@ -182,10 +182,10 @@ const App = () => {
       
 
 
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
 
-      <Document/>
-      {/* <Collection/> */}
+      {/* <Document/>
+      <Collection/> */}
 
       {/* <input type="text" onKeyDown={sinVocales} placeholder="Sin vocales"/> */}
 

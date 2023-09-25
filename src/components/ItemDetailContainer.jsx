@@ -1,8 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ItemDetail from './ItemDetail';
 import ItemCount from './ItemCount';
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
+
+    const { id } = useParams()
+    const [product, setProduct] = useState([])
+    console.log(product);
+
+    useEffect(() => {
+        const db = getFirestore()
+        const oneItem = doc(db, "tratamientos", `${id}`)
+        getDoc(oneItem).then((snapshot) => {
+            if (snapshot.exists()) {
+                const docs = snapshot.data()
+                setProduct(docs)
+            }
+        })
+    }, [])
+
 
     /* const items = [
         { id: 1, title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops", price: 109.95, description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday", stock: 5, category: "men's clothing", image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", rating: { rate: 3.9, count: 120 } },
@@ -27,22 +45,22 @@ const ItemDetailContainer = () => {
 
 
     async function ItemDetailContainer() { */
-        /* getItem().then((items) => console.log(items)); */
-       /*  try {
-            const itemsFetched = await getItem();
-            console.log(itemsFetched);
-        } catch (err) {
-            console.log(err.message);
-        }
-    }
+    /* getItem().then((items) => console.log(items)); */
+    /*  try {
+         const itemsFetched = await getItem();
+         console.log(itemsFetched);
+     } catch (err) {
+         console.log(err.message);
+     }
+ }
 
-    ItemDetailContainer(); */
+ ItemDetailContainer(); */
 
     return (
         /* items.map((item)=> {
             return(<ItemDetail key={item.id} items = {item} />)
         }) */
-        <ItemDetail items={items}/>
+        <ItemDetail items={product} id={id}/>
     )
 }
 

@@ -5,10 +5,10 @@ import './itemCount.css'
 import { CartContext } from '../context/ShoppingCartContext';
 import ItemCount from './ItemCount';
 
-const ItemDetail = ({ items }) => {
-    const { id } = useParams()
+const ItemDetail = ({ items, id }) => {
+    /* const { id } = useParams()
 
-    const filteredItems = items.filter((items) => items.id == id)
+    const filteredItems = items.filter((items) => items.id == id) */
 
     /* const [cont, setCont] = useState(0)
 
@@ -35,24 +35,24 @@ const ItemDetail = ({ items }) => {
 
     return (
         <div>
-            {filteredItems.map((p) => {
-                /* (items.map((p) => { */
-                return (
-                    <div key={p.id}>
+            {/* {filteredItems.map((p) => { */}
+                {/* (items.map((p) => { 
+                return (  */}
+                    <div key={items.id}>
                         <Center>
                             < Card maxW='sm' className='card'>
                                 <CardBody>
                                     <Image
-                                        src={p.image}
+                                        src={items.pictureUrl}
                                         borderRadius='lg'
                                     />
                                     <Stack mt='6' spacing='3'>
-                                        <Heading size='md'>{p.title}</Heading>
+                                        <Heading size='md'>{items.title}</Heading>
                                         <Text>
-                                            {p.description}
+                                            {items.description}
                                         </Text>
                                         <Text color='blue.600' fontSize='2xl'>
-                                            €{p.price}
+                                            €{items.price}
                                         </Text>
                                     </Stack>
                                 </CardBody>
@@ -77,9 +77,9 @@ const ItemDetail = ({ items }) => {
                         </Center>
 
                     </div>
-                )
-                /* })) */
-            })}
+                {/* )
+                  })) */} 
+            {/* })} */}
 
             {/* <div>
             <h2>{producto.title}</h2>

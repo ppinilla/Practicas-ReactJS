@@ -19,17 +19,14 @@ const NavBar = () => {
                             Categorias
                         </MenuButton>
                         <MenuList>
-                            <Link to={'/category/jewelery'}>
-                                <MenuItem>Jewelery</MenuItem>
+                            <Link to={'/category/corporal'}>
+                                <MenuItem>Corporal</MenuItem>
                             </Link>
-                            <Link to={`/category/men's clothing`}>
-                                <MenuItem>Men's Clothing</MenuItem>
+                            <Link to={`/category/facial`}>
+                                <MenuItem>Facial</MenuItem>
                             </Link>
-                            <Link to={'/category/electronics'}>
-                                <MenuItem>Electronics</MenuItem>
-                            </Link>
-                            <Link to={`category/women's clothing`}>
-                                <MenuItem>Women's Clothing</MenuItem>
+                            <Link to={'/category/capilar'}>
+                                <MenuItem>Capilar</MenuItem>
                             </Link>
 
                         </MenuList>
