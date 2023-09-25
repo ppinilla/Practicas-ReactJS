@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route/* , Form */ } from "react-router-dom"
 /* import { useState, useEffect } from "react"
 import ComponenteA from './components/ComponenteA' */
 import ItemListContainer from "./components/ItemListContainer"
@@ -10,8 +10,8 @@ import NavBar from "./components/NavBar"
 /* import Home from "./components/Home"
 import About from "./components/About" */
 import Cart from "./components/Cart"
-/* import ProductDetail from "./components/ProductDetail"
-import Form from "./components/Form" */
+/* import ProductDetail from "./components/ProductDetail" */
+import Form from "./components/Form"
 import ShoppingCartContext from "./context/ShoppingCartContext"
 /* import ComponenteVisible from "./components/ComponenteVisible"
 import ComponenteNoVisible from "./components/ComponenteNoVisible"
@@ -163,11 +163,14 @@ const App = () => {
 
         <ShoppingCartContext>
           <NavBar />
+          <Form />
+          
           <Routes>
             <Route exact path='/cart' element={<Cart />} />
             <Route exact path='/' element={<ItemListContainer />} />
             <Route exact path='/item/:id' element={<ItemDetailContainer />} />
             <Route path='/category/:id' element={<ItemListContainer />} />
+            
 
           </Routes>
         </ShoppingCartContext>
@@ -189,7 +192,7 @@ const App = () => {
 
       {/* <input type="text" onKeyDown={sinVocales} placeholder="Sin vocales"/> */}
 
-      {/* <Form /> */}
+      
     </>
   )
 }
